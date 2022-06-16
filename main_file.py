@@ -25,7 +25,7 @@ Training_df_summary = pd.DataFrame({
 'Precision':100.00,
 'Recall':69.00,
 'F1-Score':81.63
-})
+}, index=[0])
 
 Training_df_summary
 
@@ -56,7 +56,7 @@ Test_df_summary = pd.DataFrame({
 'Precision':86.67,
 'Recall':61.90,
 'F1-Score':72.22
-})
+}, index=[0])
 
 Test_df_summary
 
