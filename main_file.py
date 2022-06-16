@@ -16,7 +16,7 @@ By Colin O'Brien
 """)
 ## pulling in data
 training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
-test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0g)
+test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
 
 
 
