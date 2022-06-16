@@ -19,13 +19,14 @@ training_df_results = open('Train_data_latent_df.csv')
 test_df_results = open('Test_data_latent_df.csv')
 
 
+
 ## plots
 st.write("""
 Training Data
 """)
 
-fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Node 0',
-                    y='Node 1', z='Node 2',
+fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
+                    y='Dim 1', z='Dim 2',
                 color='Classification Results',
                     hover_data = ['Fault Type'],
                 color_discrete_map={
@@ -41,7 +42,7 @@ st.write("""
 Test Data
 """)
 
-fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Node 0',y='Node 1',z='Node 2',
+fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Dim 0',y='Dim 1',z='Dim 2',
                    color='Classification Results',
                     hover_data = ['Fault Type'],
                 color_discrete_map={
