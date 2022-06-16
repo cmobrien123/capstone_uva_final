@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import csv
+# import csv
 
 
 # SETTING PAGE CONFIG TO Centered MODE
@@ -15,8 +15,8 @@ st.write("""
 By Colin O'Brien
 """)
 ## pulling in data
-training_df_results = open('Train_data_latent_df.csv', header=0)
-test_df_results = open('Test_data_latent_df.csv')
+training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
+test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
 
 
 
