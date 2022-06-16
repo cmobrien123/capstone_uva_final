@@ -24,7 +24,7 @@ st.write("""
 Training Data
 """)
 
-fig = px.scatter_3d(pd.DataFrame(train_data_latent_space), x='Node 0',
+fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Node 0',
                     y='Node 1', z='Node 2',
                 color='Classification Results',
                     hover_data = ['Fault Type'],
@@ -41,7 +41,7 @@ st.write("""
 Test Data
 """)
 
-fig = px.scatter_3d(pd.DataFrame(test_data_latent_space), x='Node 0',y='Node 1',z='Node 2',
+fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Node 0',y='Node 1',z='Node 2',
                    color='Classification Results',
                     hover_data = ['Fault Type'],
                 color_discrete_map={
