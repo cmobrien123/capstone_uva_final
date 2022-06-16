@@ -16,7 +16,7 @@ By Colin O'Brien
 """)
 ## pulling in data
 training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
-test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
+test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0g)
 
 
 
@@ -36,7 +36,7 @@ fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
                 'FN': 'red'}
                    )
 fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
-fig.show()
+fig
 
 st.write("""
 Test Data
@@ -51,4 +51,4 @@ fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Dim 0',y='Dim 1',z='Dim 2'
                 'FP': 'orange',
                 'FN': 'red'})
 fig.update_layout(title_text='Test Data Latent Space', title_x=0.5)
-fig.show()
+fig
