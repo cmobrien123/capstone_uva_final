@@ -22,9 +22,19 @@ st.image(Data_overview, width = 400)
 
 
 
+## BOSS Transformation
+encoder_overview = Image.open('BOSS_transformation.png')
+st.image(encoder_overview, width = 800)
+
+
+
 ## Encoder image
 encoder_overview = Image.open('even_better_encoder.png')
 st.image(encoder_overview, width = 1200)
+
+
+
+
 
 
 ## pulling in data
