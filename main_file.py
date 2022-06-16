@@ -17,12 +17,14 @@ By Colin O'Brien
 """)
 
 ## Data overview image
-
-
 Data_overview = Image.open('parameters.png')
+st.image(Data_overview, width = 400)
 
-st.image(Data_overview, width = 1200)
 
+
+## Encoder image
+encoder_overview = Image.open('encoder.png')
+st.image(encoder_overview, width = 400)
 
 
 ## pulling in data
