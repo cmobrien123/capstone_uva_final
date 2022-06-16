@@ -24,7 +24,7 @@ st.image(Data_overview, width = 400)
 
 ## Encoder image
 encoder_overview = Image.open('encoder.png')
-st.image(encoder_overview, width = 400)
+st.image(encoder_overview, width = 1200)
 
 
 ## pulling in data
