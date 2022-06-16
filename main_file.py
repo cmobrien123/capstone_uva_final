@@ -19,8 +19,17 @@ training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
 test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
 
 
+## Training Data Results:
+Training_df_summary = pd.DataFrame({
+'Accuracy':92.86,
+'Precision':100.00,
+'Recall':69.00,
+'F1-Score'81.63
+})
 
-## plots
+Training_df_summary
+
+## Training Data Plot
 st.write("""
 Training Data
 """)
@@ -41,6 +50,15 @@ fig
 st.write("""
 Test Data
 """)
+## Test Data Results:
+Test_df_summary = pd.DataFrame({
+'Accuracy':87.65,
+'Precision':86.67,
+'Recall':61.90,
+'F1-Score'72.22
+})
+
+Test_df_summary
 
 fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Dim 0',y='Dim 1',z='Dim 2',
                    color='Classification Results',
