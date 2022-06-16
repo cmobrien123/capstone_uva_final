@@ -23,7 +23,7 @@ st.image(Data_overview, width = 400)
 
 
 ## Encoder image
-encoder_overview = Image.open('Better_encoder.png')
+encoder_overview = Image.open('even_better_encoder.png')
 st.image(encoder_overview, width = 1200)
 
 
