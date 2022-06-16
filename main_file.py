@@ -8,6 +8,11 @@ from PIL import Image
 # SETTING PAGE CONFIG TO Centered MODE
 st.set_page_config(layout="wide")
 
+
+## https://docs.streamlit.io/library/api-reference/layout/st.columns
+
+## try to play around with columns this time
+
 st.title("""
 Anomaly Detection of Electrical Signals in a Particle Accelerator
 """)
