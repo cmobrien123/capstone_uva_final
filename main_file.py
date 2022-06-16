@@ -15,7 +15,7 @@ st.write("""
 By Colin O'Brien
 """)
 ## pulling in data
-training_df_results = open('Train_data_latent_df.csv')
+training_df_results = open('Train_data_latent_df.csv', header=0)
 test_df_results = open('Test_data_latent_df.csv')
 
 
