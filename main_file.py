@@ -24,7 +24,7 @@ Training_df_summary = pd.DataFrame({
 'Accuracy':92.86,
 'Precision':100.00,
 'Recall':69.00,
-'F1-Score'81.63
+'F1-Score':81.63
 })
 
 Training_df_summary
@@ -55,7 +55,7 @@ Test_df_summary = pd.DataFrame({
 'Accuracy':87.65,
 'Precision':86.67,
 'Recall':61.90,
-'F1-Score'72.22
+'F1-Score':72.22
 })
 
 Test_df_summary
