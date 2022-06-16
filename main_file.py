@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from PIL import Image
 # import csv
 
 
@@ -14,6 +15,16 @@ Anomaly Detection of Electrical Signals in a Particle Accelerator
 st.write("""
 By Colin O'Brien
 """)
+
+## Data overview image
+
+
+Data_overview = Image.open('parameters.png')
+
+st.image(Data_overview, width = 1200)
+
+
+
 ## pulling in data
 training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
 test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
