@@ -1,4 +1,9 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
+import csv
+
+
 # SETTING PAGE CONFIG TO Centered MODE
 st.set_page_config(layout="wide")
 
@@ -9,3 +14,40 @@ Anomaly Detection of Electrical Signals in a Particle Accelerator
 st.write("""
 By Colin O'Brien
 """)
+## pulling in data
+training_df_results = open('Train_data_latent_df.csv')
+test_df_results = open('Test_data_latent_df.csv')
+
+
+## plots
+st.write("""
+Training Data
+""")
+
+fig = px.scatter_3d(pd.DataFrame(train_data_latent_space), x='Node 0',
+                    y='Node 1', z='Node 2',
+                color='Classification Results',
+                    hover_data = ['Fault Type'],
+                color_discrete_map={
+                'TN': 'blue',
+                'TP': 'green',
+                'FP': 'orange',
+                'FN': 'red'}
+                   )
+fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
+fig.show()
+
+st.write("""
+Test Data
+""")
+
+fig = px.scatter_3d(pd.DataFrame(test_data_latent_space), x='Node 0',y='Node 1',z='Node 2',
+                   color='Classification Results',
+                    hover_data = ['Fault Type'],
+                color_discrete_map={
+                'TN': 'blue',
+                'TP': 'green',
+                'FP': 'orange',
+                'FN': 'red'})
+fig.update_layout(title_text='Test Data Latent Space', title_x=0.5)
+fig.show()
