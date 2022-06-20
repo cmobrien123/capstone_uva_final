@@ -5,13 +5,22 @@ from PIL import Image
 # import csv
 
 
-# SETTING PAGE CONFIG TO Centered MODE
+# SETTING PAGE CONFIG TO Centered MODEg
 st.set_page_config(layout="wide")
 
 
+
+########################
+## TO DO'S
+########################
 ## https://docs.streamlit.io/library/api-reference/layout/st.columns
 
 ## try to play around with columns this time
+
+
+########################
+## title
+########################
 
 st.title("""
 Anomaly Detection of Electrical Signals in a Particle Accelerator
@@ -19,6 +28,21 @@ Anomaly Detection of Electrical Signals in a Particle Accelerator
 
 st.write("""
 By Colin O'Brien
+""")
+
+########################
+## intro
+########################
+
+st.write("""
+While studying at the University of Virgina, I took part in a capstone course while I was lucky enough to work with JLab and Oak Ridge facilities (get their full real names) on an anomaly detection problem they were facing. They were trying to use electrical signals from some of the machines in a particle accelerator to predict if the system was about to malfunction. On this page, I want to outline one of the proposed solutions to this problem. The main pieces of the pipeline I used are as follows:
+
+1)	Fourier transformation as a data transformation step
+2)	Training an autoencoder
+3)	Applying a Radial Support Vector Machine to the latent space of the autoencoder.
+
+Something important to note about the methods I used is that I was not only concerned with building a method that could accurately find abnormal observations, I wanted to also achieve a level of interpretability and ability to visualize the difference between observations.
+
 """)
 
 ## Data overview image
