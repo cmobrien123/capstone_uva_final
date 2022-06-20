@@ -18,9 +18,14 @@ st.set_page_config(layout="wide")
 ## try to play around with columns this time
 
 ########################
-## image pull in here
+## data/image pull in here
 ########################
 
+## pulling in data
+training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
+test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
+
+## pulling in images
 Data_overview = Image.open('parameters.png')
 BOSS_overview = Image.open('BOSS_transformation.png')
 encoder_overview = Image.open('even_better_encoder.png')
