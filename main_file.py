@@ -88,7 +88,6 @@ For each observation, there are 19 different sub-components of the HVCM system, 
 
 """)
 with col_data_image:
-    st.write("Single Observation Example")
     st.image(Data_overview, width = 400)
 
 ################
@@ -135,7 +134,7 @@ with blank_l:
     st.write(' ')
 with Centered:
     st.write("""
-    Training Autoencoder
+    Training Autoencoder and Learning Latent Space
     """)
 with blank_r:
     st.write(' ')
@@ -146,9 +145,72 @@ Below is an architecture of the encoder I built. The 19x8 matrices from the BOSS
 """)
 st.image(encoder_overview, width = 1200)
 
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.write("""
+    Training Radial Support Vector Machine
+    """)
+with blank_r:
+    st.write(' ')
+
+st.write("""
+Since we have label data for classification, a support vector machine (SVM) make sense to try to build a decision boundary between the different classes of data. Since the data is not likely to be easier to separate linearly, a radial kernel will be used, which allows for complex decision boundaries.
+
+We have two main parameters here that need to be tuned using the training data, C and gamma. C is essentially the tradeoff between misclassifications and a smooth decision boundary. If the decision boundary is too jagged, the SVM will not generalize to unseen data. Gamma is a parameter that controls how much weight training observations have on the decision boundary. This helps control the SVM’s ability to learn the shape of the distribution of each class. Again, if gamma is too high, the SVM will overfit and will not generalize to unseen data. I tuned these parameters using a simple grid search (5-fold cross validation). Since I have unbalanced data (more Normal observations than Faults), I used the parameters that maximized my F-1 score.
+
+""")
+
+################
+## Vis training Results
+################
+
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.header("""
+    Visualizing Training Results
+    """)
+with blank_r:
+    st.write(' ')
+
+Training_write_up, training_image = st.colums(2)
+with Training_write_up:
+    st.write("""
+    Here we see the scores of the SVM once fit to all the training data, as well as a visual representation of the latent space, with color indicating whether a signal was correctly classified.
+
+    The two blue clusters in the bottom right indicate large clusters of correctly classified Normal observations. This was interesting as there seems to be two separate sub-types of normal signals being produced by the HVCM.  Green observations are correctly classified Faults. TPS and DV/DT High Faults seemed to be forming some small clusters of their own, suggesting in future analysis, these types of faults may want to be considered a sub-category.
+
+    There are a few red dots indicating Faults that were misclassified. These Faults are appearing as identical to a trained autoencoder, suggesting that at least within the HVCM electrical data, there is no signal in these observations that could be used to identify them as abnormal. A takeaway from this would be that more data from other systems beyond the HVCM may be needed in order to classify these observations accurately.
+
+    The accuracy score metric is not particularly helpful given unbalanced data, but the higher precision score compared to recall indicates the model is better at avoiding false positives than it is at finding faults.
 
 
+    """)
+with training_image:
+    Training_df_summary = pd.DataFrame({
+    'Accuracy':92.86,
+    'Precision':100.00,
+    'Recall':69.00,
+    'F1-Score':81.63
+    }, index=[0])
 
+    Training_df_summary
+
+    fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
+                        y='Dim 1', z='Dim 2',
+                    color='Classification Results',
+                        hover_data = ['Fault Type'],
+                    color_discrete_map={
+                    'TN': 'blue',
+                    'TP': 'green',
+                    'FP': 'orange',
+                    'FN': 'red'}
+                       )
+    fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
+    fig
 
 
 
@@ -163,7 +225,7 @@ st.image(encoder_overview, width = 1200)
 
 ## Encoder image
 # encoder_overview = Image.open('even_better_encoder.png')
-st.image(encoder_overview, width = 1200)
+# st.image(encoder_overview, width = 1200)
 
 
 
