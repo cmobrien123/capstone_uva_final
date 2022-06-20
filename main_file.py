@@ -49,10 +49,10 @@ Something important to note about the methods I used is that I was not only conc
 
 The data consisted of electrical signals from the HVCM system, one of the key systems in creating the beam of a particle accelerator. The observations fell into one of two categories:
 
-•	“Normal”: a signal collected right before the beam was produced in the particle accelerator.
-o	I like to think of these as a “normal heartbeat” of the HVCM system.
-•	“Faults”: Signals collected right before the machine failed to produce the beam, meaning an experiment or other research could not be completed. Once a Fault occurs, the error must be diagnosed, with 14 different types of Faults.
-o	I think of these as the “heartbeat right before a heart attack” in the HVCM system.
+- “Normal”: a signal collected right before the beam was produced in the particle accelerator.
+    - I like to think of these as a “normal heartbeat” of the HVCM system.
+- “Faults”: Signals collected right before the machine failed to produce the beam, meaning an experiment or other research could not be completed. Once a Fault occurs, the error must be diagnosed, with 14 different types of Faults.
+    - I think of these as the “heartbeat right before a heart attack” in the HVCM system.
 
 For each observation, there are 19 different sub-components of the HVCM system, each with a different signal (or heartbeat). To the right is an example for one of the “Normal” observations. The aim is train a method that looks across all 19 parameters and finds differences in these signals in order to make classifications.
 
