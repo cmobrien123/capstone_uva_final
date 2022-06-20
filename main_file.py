@@ -54,10 +54,23 @@ While studying at the University of Virgina, I took part in a capstone course wh
 Something important to note about the methods I used is that I was not only concerned with building a method that could accurately find abnormal observations, I wanted to also achieve a level of interpretability and ability to visualize the difference between observations.
 
 """)
+blank_l, Centered, blank_r = st.columns(3)
 
-st.header("""
-Data Overview
-""")
+with col1:
+    st.write(' ')
+
+with col2:
+    st.header("""
+    Data Overview
+    """)
+
+with col3:
+    st.write(' ')
+
+
+# st.header("""
+# Data Overview
+# """)
 
 col_data_write_up, col_data_image = st.columns(2)
 
@@ -74,7 +87,7 @@ For each observation, there are 19 different sub-components of the HVCM system, 
 
 """)
 with col_data_image:
-    st.header("Parameter Example")
+    st.write("Single Observation Example")
     st.image(Data_overview, width = 400)
 
 
