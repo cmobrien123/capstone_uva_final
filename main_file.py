@@ -17,6 +17,12 @@ st.set_page_config(layout="wide")
 
 ## try to play around with columns this time
 
+########################
+## image pull in here
+########################
+
+Data_overview = Image.open('parameters.png')
+
 
 ########################
 ## title
@@ -47,6 +53,12 @@ While studying at the University of Virgina, I took part in a capstone course wh
 
 Something important to note about the methods I used is that I was not only concerned with building a method that could accurately find abnormal observations, I wanted to also achieve a level of interpretability and ability to visualize the difference between observations.
 
+""")
+
+col_data_write_up, col_data_image = st.columns(2)
+
+with col_data_write_up:
+    st.write("""
 The data consisted of electrical signals from the HVCM system, one of the key systems in creating the beam of a particle accelerator. The observations fell into one of two categories:
 
 - “Normal”: a signal collected right before the beam was produced in the particle accelerator.
@@ -57,12 +69,15 @@ The data consisted of electrical signals from the HVCM system, one of the key sy
 For each observation, there are 19 different sub-components of the HVCM system, each with a different signal (or heartbeat). To the right is an example for one of the “Normal” observations. The aim is train a method that looks across all 19 parameters and finds differences in these signals in order to make classifications.
 
 """)
+with col_data_image:
+    st.image(Data_overview, width = 400)
+
 
 
 
 ## Data overview image
-Data_overview = Image.open('parameters.png')
-st.image(Data_overview, width = 400)
+# Data_overview = Image.open('parameters.png')
+# st.image(Data_overview, width = 400)
 
 
 
