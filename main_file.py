@@ -22,6 +22,8 @@ st.set_page_config(layout="wide")
 ########################
 
 Data_overview = Image.open('parameters.png')
+BOSS_overview = Image.open('BOSS_transformation.png')
+
 
 
 ########################
@@ -121,6 +123,12 @@ with BOSS_write_up:
     In a less technical perspective, the snapshots are grouped together, with similar snapshots being given the same word/location in the histogram. This process is repeated for all 19 parameters, creating a 19 by 8 matrix for each observation. (Add advantages to doing this here?)
 
     """)
+with BOSS_image:
+    st.image(BOSS_overview, width = 400)
+    st.write("""
+    The moving window (red) goes from left to right across the signal, taking "snapshots" of the singal. Each snapshot is assigned a word based on its Fourier coefficient and added to the histogram accordingly.
+    """)
+
 
 
 
@@ -132,8 +140,8 @@ with BOSS_write_up:
 
 
 ## BOSS Transformation
-encoder_overview = Image.open('BOSS_transformation.png')
-st.image(encoder_overview, width = 800)
+# BOSS_overview = Image.open('BOSS_transformation.png')
+st.image(BOSS_overview, width = 400)
 
 
 
