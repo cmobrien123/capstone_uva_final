@@ -176,7 +176,7 @@ with Centered:
 with blank_r:
     st.write(' ')
 
-Training_write_up, training_image = st.colums(2)
+Training_write_up, training_image = st.columns(2)
 with Training_write_up:
     st.write("""
     Here we see the scores of the SVM once fit to all the training data, as well as a visual representation of the latent space, with color indicating whether a signal was correctly classified.
