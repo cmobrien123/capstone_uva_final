@@ -56,15 +56,15 @@ Something important to note about the methods I used is that I was not only conc
 """)
 blank_l, Centered, blank_r = st.columns(3)
 
-with col1:
+with blank_l:
     st.write(' ')
 
-with col2:
+with Centered:
     st.header("""
     Data Overview
     """)
 
-with col3:
+with blank_r:
     st.write(' ')
 
 
