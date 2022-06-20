@@ -85,14 +85,8 @@ For each observation, there are 19 different sub-components of the HVCM system, 
 
 """)
 with col_data_image:
-    blank_l, Centered, blank_r = st.columns(3)
-    with blank_l:
-        st.write(' ')
-    with Centered:
-        st.write("Single Observation Example")
-        st.image(Data_overview, width = 400)
-    with blank_r:
-        st.write(' ')
+    st.write("Single Observation Example")
+    st.image(Data_overview, width = 400)
 
 
 
