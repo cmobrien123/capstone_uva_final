@@ -216,8 +216,46 @@ with training_image:
     fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
     fig
 
+################
+## Vis test_df_results Results
+################
 
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.header("""
+    Test Results
+    """)
+    Test_df_summary = pd.DataFrame({
+    'Accuracy':87.65,
+    'Precision':86.67,
+    'Recall':61.90,
+    'F1-Score':72.22
+    }, index=[0])
+    Test_df_summary
+with blank_r:
+    st.write(' ')
 
+test_write_up, test_image = st.columns(2)
+
+with test_write_up:
+    st.write("""
+    Here we see the test data passed through the same pipeline (BOSS transformation -> autoencoder -> SVM). Given that this is unseen data, it is expected that there is a drop off in performance. However, many same trends can be seen. Precision remains higher, the two normal clusters are present and TPS faults appear to be forming their own cluster.
+    """)
+with test_image:
+    fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
+                        y='Dim 1', z='Dim 2',
+                    color='Classification Results',
+                        hover_data = ['Fault Type'],
+                    color_discrete_map={
+                    'TN': 'blue',
+                    'TP': 'green',
+                    'FP': 'orange',
+                    'FN': 'red'}
+                       )
+    fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
+    fig
 
 
 
