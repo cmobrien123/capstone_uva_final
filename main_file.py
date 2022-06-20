@@ -112,6 +112,15 @@ with Centered:
 with blank_r:
     st.write(' ')
 
+BOSS_write_up, BOSS_image = st.columns(2)
+
+with BOSS_write_up:
+    st.write("""
+    After splitting the data into training and test data, the first step is applying the Bag of Symbolic Fourier Approximation Symbols (BOSS) transformation. For a given observation, each of the 19 sub-components have a sliding window applied. Each snapshot captured by the sliding window is decomposed by its Fourier coefficient, which is used to assign the snapshot to one of the 8 different words in a 2 letter, 3 index dictionary. As the sliding window moves across the signal, the many snapshots are used to produce a histogram, which can be represented as 1D vector.
+
+    In a less technical perspective, the snapshots are grouped together, with similar snapshots being given the same word/location in the histogram. This process is repeated for all 19 parameters, creating a 19 by 8 matrix for each observation. (Add advantages to doing this here?)
+
+    """)
 
 
 
