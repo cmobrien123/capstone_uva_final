@@ -30,7 +30,7 @@ st.title("""
 Anomaly Detection of Electrical Signals in a Particle Accelerator
 """)
 
-st.Image(haldron_collider)
+st.image(haldron_collider)
 
 st.header("""
 By Colin O'Brien
