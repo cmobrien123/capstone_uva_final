@@ -176,8 +176,15 @@ with blank_l:
     st.write(' ')
 with Centered:
     st.header("""
-    Visualizing Training Results
+    Training Results
     """)
+    Training_df_summary = pd.DataFrame({
+        'Accuracy':92.86,
+        'Precision':100.00,
+        'Recall':69.00,
+        'F1-Score':81.63
+        }, index=[0])
+    Training_df_summary
 with blank_r:
     st.write(' ')
 
@@ -195,14 +202,6 @@ with Training_write_up:
 
     """)
 with training_image:
-    Training_df_summary = pd.DataFrame({
-    'Accuracy':92.86,
-    'Precision':100.00,
-    'Recall':69.00,
-    'F1-Score':81.63
-    }, index=[0])
-
-    Training_df_summary
 
     fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
                         y='Dim 1', z='Dim 2',
