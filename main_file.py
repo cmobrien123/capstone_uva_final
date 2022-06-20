@@ -2,20 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from PIL import Image
-# import csv
 
 
-# SETTING PAGE CONFIG TO Centered MODEg
+# SETTING PAGE CONFIG TO wide MODE
 st.set_page_config(layout="wide")
-
-
-
-########################
-## TO DO'S
-########################
-## https://docs.streamlit.io/library/api-reference/layout/st.columns
-
-## try to play around with columns this time
 
 ########################
 ## data/image pull in here
@@ -263,7 +253,7 @@ with blank_l:
     st.write(' ')
 with Centered:
     st.header("""
-    Area for Further Development
+    Areas for Further Development
     """)
 with blank_r:
     st.write(' ')
@@ -271,77 +261,3 @@ with blank_r:
 st.write("""
 Like any data science project, there are areas to improve with more time and resources. One of the largest is parameter tunning for the BOSS transformation. Given the computation resources I had access to at the time, I was only able to use a smaller possible dictionary of words. Another area that would have been interesting to explore would be perforce of the SVM verse using SoftMax output layers for classification. The latent space layer could have been connected to an additional SoftMax layer. Finally, measuring uncertainty would have been an interesting facet to explore, with various Bayesian approaches to classification providing more measurements for uncertainty.
 """)
-
-
-
-## BOSS Transformation
-# BOSS_overview = Image.open('BOSS_transformation.png')
-# st.image(BOSS_overview, width = 400)
-
-
-#
-# ## Encoder image
-# # encoder_overview = Image.open('even_better_encoder.png')
-# # st.image(encoder_overview, width = 1200)
-#
-#
-#
-#
-#
-#
-# ## pulling in data
-# training_df_results = pd.read_csv('Train_data_latent_df.csv', header=0)
-# test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
-#
-#
-# ## Training Data Results:
-# Training_df_summary = pd.DataFrame({
-# 'Accuracy':92.86,
-# 'Precision':100.00,
-# 'Recall':69.00,
-# 'F1-Score':81.63
-# }, index=[0])
-#
-# Training_df_summary
-#
-# ## Training Data Plot
-# st.write("""
-# Training Data
-# """)
-#
-# fig = px.scatter_3d(pd.DataFrame(training_df_results), x='Dim 0',
-#                     y='Dim 1', z='Dim 2',
-#                 color='Classification Results',
-#                     hover_data = ['Fault Type'],
-#                 color_discrete_map={
-#                 'TN': 'blue',
-#                 'TP': 'green',
-#                 'FP': 'orange',
-#                 'FN': 'red'}
-#                    )
-# fig.update_layout(title_text='Training Data Latent Space', title_x=0.5)
-# fig
-#
-# st.write("""
-# Test Data
-# """)
-# ## Test Data Results:
-# Test_df_summary = pd.DataFrame({
-# 'Accuracy':87.65,
-# 'Precision':86.67,
-# 'Recall':61.90,
-# 'F1-Score':72.22
-# }, index=[0])
-#
-# Test_df_summary
-#
-# fig = px.scatter_3d(pd.DataFrame(test_df_results), x='Dim 0',y='Dim 1',z='Dim 2',
-#                    color='Classification Results',
-#                     hover_data = ['Fault Type'],
-#                 color_discrete_map={
-#                 'TN': 'blue',
-#                 'TP': 'green',
-#                 'FP': 'orange',
-#                 'FN': 'red'})
-# fig.update_layout(title_text='Test Data Latent Space', title_x=0.5)
-# fig
