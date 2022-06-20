@@ -19,7 +19,7 @@ test_df_results = pd.read_csv('Test_data_latent_df.csv', header=0)
 Data_overview = Image.open('parameters.png')
 BOSS_overview = Image.open('BOSS_transformation.png')
 encoder_overview = Image.open('even_better_encoder.png')
-
+haldron_collider = Image.open('haldron_collider.png')
 
 
 ########################
@@ -29,6 +29,8 @@ encoder_overview = Image.open('even_better_encoder.png')
 st.title("""
 Anomaly Detection of Electrical Signals in a Particle Accelerator
 """)
+
+st.Image(haldron_collider)
 
 st.header("""
 By Colin O'Brien
