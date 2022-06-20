@@ -6,7 +6,7 @@ from PIL import Image
 
 
 # SETTING PAGE CONFIG TO Centered MODEg
-st.set_page_config(layout="centered")
+st.set_page_config(layout="wide")
 
 
 
