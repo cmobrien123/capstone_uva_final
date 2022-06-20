@@ -88,13 +88,37 @@ with col_data_image:
     st.write("Single Observation Example")
     st.image(Data_overview, width = 400)
 
+################
+## pipeline
+################
+
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.header("""
+    Building Pipeline
+    """)
+with blank_r:
+    st.write(' ')
+
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.write("""
+    Bag of Symbolic Fourier Approximation Symbols
+    """)
+with blank_r:
+    st.write(' ')
 
 
 
 
-## Data overview image
-# Data_overview = Image.open('parameters.png')
-# st.image(Data_overview, width = 400)
+
+
+
+
 
 
 
