@@ -74,6 +74,7 @@ For each observation, there are 19 different sub-components of the HVCM system, 
 
 """)
 with col_data_image:
+    st.header("Parameter Example")
     st.image(Data_overview, width = 400)
 
 
