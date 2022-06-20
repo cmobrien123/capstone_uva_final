@@ -23,6 +23,7 @@ st.set_page_config(layout="wide")
 
 Data_overview = Image.open('parameters.png')
 BOSS_overview = Image.open('BOSS_transformation.png')
+encoder_overview = Image.open('even_better_encoder.png')
 
 
 
@@ -129,6 +130,21 @@ with BOSS_image:
     The moving window (red) goes from left to right across the signal, taking "snapshots" of the singal. Each snapshot is assigned a word based on its Fourier coefficient and added to the histogram accordingly.
     """)
 
+blank_l, Centered, blank_r = st.columns(3)
+with blank_l:
+    st.write(' ')
+with Centered:
+    st.write("""
+    Training Autoencoder
+    """)
+with blank_r:
+    st.write(' ')
+
+st.write("""The second step is training an autoencoder. An autoencoder takes some in some kind of data in the form of matrices or tensors, compresses that data down to a small latent space and then tries to rebuild the original data. The reason for doing this is to get a low dimensional representation of the data, thus finding a few learned features that can be used to accurately represent the differences between observations.
+
+Below is an architecture of the encoder I built. The 19x8 matrices from the BOSS transformation are flattened, gradually compressed down to a 3-dimensional space, then reconstructed. The model is trained using gradient descent based on the loss produced by the difference between the input 19x8 matrices and the output 19x8 matrices (this is repeated until the loss converges). Once the autoencoder is trained, data can be projected into the latent space.
+""")
+st.image(encoder_overview, width = 1200)
 
 
 
@@ -141,12 +157,12 @@ with BOSS_image:
 
 ## BOSS Transformation
 # BOSS_overview = Image.open('BOSS_transformation.png')
-st.image(BOSS_overview, width = 400)
+# st.image(BOSS_overview, width = 400)
 
 
 
 ## Encoder image
-encoder_overview = Image.open('even_better_encoder.png')
+# encoder_overview = Image.open('even_better_encoder.png')
 st.image(encoder_overview, width = 1200)
 
 
