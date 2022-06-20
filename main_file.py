@@ -41,7 +41,7 @@ By Colin O'Brien
 ########################
 
 st.header("""
-Introduction and Data Overview
+Introduction
 """)
 
 st.write("""
@@ -53,6 +53,10 @@ While studying at the University of Virgina, I took part in a capstone course wh
 
 Something important to note about the methods I used is that I was not only concerned with building a method that could accurately find abnormal observations, I wanted to also achieve a level of interpretability and ability to visualize the difference between observations.
 
+""")
+
+st.header("""
+Data Overview
 """)
 
 col_data_write_up, col_data_image = st.columns(2)
