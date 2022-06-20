@@ -6,7 +6,7 @@ from PIL import Image
 
 
 # SETTING PAGE CONFIG TO Centered MODEg
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 
 
@@ -58,7 +58,7 @@ with blank_r:
     st.write(' ')
 
 st.write("""
-While studying at the University of Virgina, I took part in a capstone course while I was lucky enough to work with JLab and Oak Ridge facilities (get their full real names) on an anomaly detection problem they were facing. They were trying to use electrical signals from some of the machines in a particle accelerator to predict if the system was about to malfunction. On this page, I want to outline one of the proposed solutions to this problem. The main pieces of the pipeline I used are as follows:
+While studying at the University of Virgina, I took part in a capstone course where I was lucky enough to work with JLab and Oak Ridge facilities (get their full real names) on an anomaly detection problem they were facing. They were trying to use electrical signals from some of the machines in a particle accelerator to predict if the system was about to malfunction. On this page, I want to outline one of the proposed solutions to this problem. The main pieces of the pipeline I used are as follows:
 
 1)	Fourier transformation as a data transformation step
 2)	Training an autoencoder
