@@ -255,7 +255,7 @@ with blank_l:
     st.write(' ')
 with Centered:
     st.header("""
-    Areas for Further Development
+    Next Steps
     """)
 with blank_r:
     st.write(' ')
